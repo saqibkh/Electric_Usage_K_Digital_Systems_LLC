@@ -19,10 +19,16 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt # If your script needs requests, etc.
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
 
       - name: Run tracking script
-        run: python kasa_logger.py
+        run: |
+          # You have to activate the venv again in this new step
+          source venv/bin/activate
+          python kasa_logger.py
 
       - name: Commit and Push changes
         run: |
