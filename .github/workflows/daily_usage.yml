@@ -36,7 +36,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add server_power_usage1.csv
-          git add server_power_usage2.csv
+          git add server_power_usage_plug1.csv
+          git add server_power_usage_plug2.csv
           git commit -m "Update electricity usage for $(date +'%Y-%m-%d')" || exit 0
           git push
